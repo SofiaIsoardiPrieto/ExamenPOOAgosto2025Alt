@@ -32,18 +32,18 @@ namespace ExamenPOOAgosto2025Alt.Windows
         {
             if (ValidarDatos())
             {
-                if (producto == null //y el combo que no se cargar)
-                {
-                    producto = new Diario();
-                    ((Diario)producto).FechaPublicacion = DateTime.Now.Date;
-                }
-                producto.Descripcion = txtDescripcion.Text;
-                producto.Stock = int.Parse(txtStock.Text);
-                producto.Precio = decimal.Parse(txtPrecio.Text);
-                if (//segun combo)
-                {
+                //if (producto == null //y el combo que no se cargar)
+                //{
+                //    producto = new Diario();
+                //    ((Diario)producto).FechaPublicacion = DateTime.Now.Date;
+                //}
+                //producto.Descripcion = txtDescripcion.Text;
+                //producto.Stock = int.Parse(txtStock.Text);
+                //producto.Precio = decimal.Parse(txtPrecio.Text);
+                //if (//segun combo)
+                //{
                    
-                }
+                //}
              
                 DialogResult = DialogResult.OK;
             }
@@ -65,7 +65,7 @@ namespace ExamenPOOAgosto2025Alt.Windows
             }
             return valido;
         }
-        internal Producto GetVenta()
+        internal Producto GetProducto()
         {
             return producto;
         }

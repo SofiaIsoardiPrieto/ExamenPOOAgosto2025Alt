@@ -45,7 +45,7 @@
             TxtCantidadFiguras = new TextBox();
             label1 = new Label();
             panel1 = new Panel();
-            dgvDatos = new DataGridView();
+            dataGridView1 = new DataGridView();
             colId = new DataGridViewTextBoxColumn();
             colTipo = new DataGridViewTextBoxColumn();
             colDescripcion = new DataGridViewTextBoxColumn();
@@ -54,7 +54,7 @@
             toolStrip1.SuspendLayout();
             panelInferior.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // toolStrip1
@@ -75,6 +75,7 @@
             TsbNuevo.Size = new Size(52, 67);
             TsbNuevo.Text = "Nuevo";
             TsbNuevo.TextImageRelation = TextImageRelation.ImageAboveText;
+            TsbNuevo.Click += TsbNuevo_Click;
             // 
             // TsbBorrar
             // 
@@ -85,6 +86,7 @@
             TsbBorrar.Size = new Size(52, 67);
             TsbBorrar.Text = "Borrar";
             TsbBorrar.TextImageRelation = TextImageRelation.ImageAboveText;
+            TsbBorrar.Click += TsbBorrar_Click;
             // 
             // TsbEditar
             // 
@@ -95,6 +97,7 @@
             TsbEditar.Size = new Size(52, 67);
             TsbEditar.Text = "Editar";
             TsbEditar.TextImageRelation = TextImageRelation.ImageAboveText;
+            TsbEditar.Click += TsbEditar_Click;
             // 
             // toolStripSeparator1
             // 
@@ -156,6 +159,7 @@
             TsbSalir.Size = new Size(52, 67);
             TsbSalir.Text = "Salir";
             TsbSalir.TextImageRelation = TextImageRelation.ImageAboveText;
+            TsbSalir.Click += TsbSalir_Click;
             // 
             // panelInferior
             // 
@@ -186,29 +190,29 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(dgvDatos);
+            panel1.Controls.Add(dataGridView1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 70);
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 303);
             panel1.TabIndex = 2;
             // 
-            // dgvDatos
+            // dataGridView1
             // 
-            dgvDatos.AllowUserToAddRows = false;
-            dgvDatos.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(224, 224, 224);
-            dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDatos.Columns.AddRange(new DataGridViewColumn[] { colId, colTipo, colDescripcion, colPrecio, colStock });
-            dgvDatos.Dock = DockStyle.Fill;
-            dgvDatos.Location = new Point(0, 0);
-            dgvDatos.MultiSelect = false;
-            dgvDatos.Name = "dgvDatos";
-            dgvDatos.ReadOnly = true;
-            dgvDatos.RowHeadersVisible = false;
-            dgvDatos.Size = new Size(800, 303);
-            dgvDatos.TabIndex = 0;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colId, colTipo, colDescripcion, colPrecio, colStock });
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 0);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.Size = new Size(800, 303);
+            dataGridView1.TabIndex = 0;
             // 
             // colId
             // 
@@ -253,12 +257,13 @@
             Controls.Add(toolStrip1);
             Name = "frmProductos";
             Text = "FrmFiguras3D";
+            Load += frmProductos_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             panelInferior.ResumeLayout(false);
             panelInferior.PerformLayout();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -276,7 +281,7 @@
         private ToolStripButton TsbSalir;
         private Panel panelInferior;
         private Panel panel1;
-        private DataGridView dgvDatos;
+        private DataGridView dataGridView1;
         private ToolStripDropDownButton TsbFiltrar;
         private TextBox TxtCantidadFiguras;
         private Label label1;
